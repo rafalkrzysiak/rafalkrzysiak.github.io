@@ -881,6 +881,58 @@
   });
 </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const carousels = document.querySelectorAll('.carousel-container');
+
+
+  carousels.forEach((carousel, i) => {
+  const slides = carousel.querySelectorAll('img.carousel-fade');
+  const dots = carousel.querySelectorAll('.dot');
+  const prevBtn = carousel.querySelector('.carousel-prev');
+  const nextBtn = carousel.querySelector('.carousel-next');
+  let index = 0;
+
+
+  function showSlide(n) {
+  slides.forEach((img, idx) => img.classList.toggle('active', idx === n));
+  dots.forEach((dot, idx) => dot.classList.toggle('active', idx === n));
+  index = n;
+  }
+
+
+  function plusSlides(n) {
+  showSlide((index + n + slides.length) % slides.length);
+  }
+
+
+  function currentSlide(n) {
+  showSlide(n);
+  }
+
+
+  // Event listeners
+  if (prevBtn) prevBtn.addEventListener('click', () => plusSlides(-1));
+  if (nextBtn) nextBtn.addEventListener('click', () => plusSlides(1));
+
+
+  dots.forEach(dot => {
+  dot.addEventListener('click', () => {
+  currentSlide(parseInt(dot.getAttribute('data-index')));
+  });
+  });
+
+
+  // Auto-play
+  setInterval(() => plusSlides(1), 6000);
+
+
+  // Initial display
+  showSlide(index);
+  });
+  });
+</script>
+
 </body>
 
 </html>
