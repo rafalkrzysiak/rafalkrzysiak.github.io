@@ -750,17 +750,39 @@ small {
   top: 50%;
   transform: translateY(-50%);
   color: white;
-  font-size: 30px;
-  padding: 10px;
-  z-index: 2;
+  font-size: 40px;
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.4); /* semi-transparent background */
+  border-radius: 50%;
   cursor: pointer;
   user-select: none;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.carousel-prev,
+.carousel-next {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Prevent ghost clicks when hidden */
+}
+
+/* On hover: show arrows */
+.carousel-container:hover .carousel-prev,
+.carousel-container:hover .carousel-next {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .carousel-prev {
-  left: 10px;
+  left: 20px;
 }
 
 .carousel-next {
-  right: 10px;
+  right: 20px;
 }
