@@ -695,9 +695,10 @@ small {
 
 .carousel-container {
   position: relative;
-  width: 100vw; /* full viewport width */
+  width: 100%;
+  max-width: 300px; /* adjust as needed */
   height: auto;
-  margin: 0 auto;
+  margin-top: 20px;
   overflow: hidden;
 }
 
@@ -705,12 +706,10 @@ small {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw; /* match full width */
-  height: auto;
+  width: 100%;
   opacity: 0;
   transition: opacity 1s ease-in-out;
   z-index: 0;
-  object-fit: cover;
 }
 
 .carousel-container img.carousel-fade.active {
