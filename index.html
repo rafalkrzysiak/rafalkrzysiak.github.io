@@ -260,42 +260,19 @@
               <h5>Self-driven, quick starter, passionate mechanical engineer with a curious mind who enjoys solving complex and challenging real-world problems.</h5>
             </div>
 
-            <div class="dual-carousel-wrapper" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: flex-start; margin-top: 30px;">
-              <!-- Left Carousel: Headshots -->
-              <div class="carousel-container" style="position: relative; width: 300px;">
-                <img class="carousel-fade active" src="/assets/img/IEEE_HMS_Headshot_pic_500x500.jpg" />
-                <img class="carousel-fade" src="/assets/img/JPL_rover_selfie_500x500.jpg" />
+            <!-- Carousel Slideshow -->
+            <div class="carousel-container">
+              <img class="carousel-fade active" src="/assets/img/IEEE_HMS_Headshot_pic_500x500.jpg" />
+              <img class="carousel-fade" src="/assets/img/JPL_rover_selfie_500x500.jpg" />
 
+              <!-- Arrows -->
+              <a class="carousel-prev">&#10094;</a>
+              <a class="carousel-next">&#10095;</a>
 
-                <!-- Arrows -->
-                <a class="carousel-prev" style="display: none;" onclick="plusSlides(-1, 0)">&#10094;</a>
-                <a class="carousel-next" style="display: none;" onclick="plusSlides(1, 0)">&#10095;</a>
-
-
-                <!-- Dots -->
-                <div class="carousel-dots">
-                <span class="dot active" data-index="0" onclick="currentSlide(0, 0)"></span>
-                <span class="dot" data-index="1" onclick="currentSlide(1, 0)"></span>
-                </div>
-                </div>
-
-
-                <!-- Right Carousel: Research Figures -->
-                <div class="carousel-container" style="position: relative; width: 300px;">
-                <img class="carousel-fade active" src="/assets/img/IEEE_HMS_Headshot_pic_500x500.jpg" />
-                <img class="carousel-fade" src="/assets/img/JPL_rover_selfie_500x500.jpg" />
-
-
-                <!-- Arrows -->
-                <a class="carousel-prev" style="display: none;" onclick="plusSlides(-1, 1)">&#10094;</a>
-                <a class="carousel-next" style="display: none;" onclick="plusSlides(1, 1)">&#10095;</a>
-
-
-                <!-- Dots -->
-                <div class="carousel-dots">
-                <span class="dot active" data-index="0" onclick="currentSlide(0, 1)"></span>
-                <span class="dot" data-index="1" onclick="currentSlide(1, 1)"></span>
-                </div>
+              <!-- Dots -->
+              <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
               </div>
             </div>
 
@@ -878,58 +855,6 @@
     var n = document.querySelectorAll('#publications ol li').length;
     var el = document.getElementById('pubCount');
     if (el && n) el.textContent = n + '+';
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-  const carousels = document.querySelectorAll('.carousel-container');
-
-
-  carousels.forEach((carousel, i) => {
-  const slides = carousel.querySelectorAll('img.carousel-fade');
-  const dots = carousel.querySelectorAll('.dot');
-  const prevBtn = carousel.querySelector('.carousel-prev');
-  const nextBtn = carousel.querySelector('.carousel-next');
-  let index = 0;
-
-
-  function showSlide(n) {
-  slides.forEach((img, idx) => img.classList.toggle('active', idx === n));
-  dots.forEach((dot, idx) => dot.classList.toggle('active', idx === n));
-  index = n;
-  }
-
-
-  function plusSlides(n) {
-  showSlide((index + n + slides.length) % slides.length);
-  }
-
-
-  function currentSlide(n) {
-  showSlide(n);
-  }
-
-
-  // Event listeners
-  if (prevBtn) prevBtn.addEventListener('click', () => plusSlides(-1));
-  if (nextBtn) nextBtn.addEventListener('click', () => plusSlides(1));
-
-
-  dots.forEach(dot => {
-  dot.addEventListener('click', () => {
-  currentSlide(parseInt(dot.getAttribute('data-index')));
-  });
-  });
-
-
-  // Auto-play
-  setInterval(() => plusSlides(1), 6000);
-
-
-  // Initial display
-  showSlide(index);
-  });
   });
 </script>
 
