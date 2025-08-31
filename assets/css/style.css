@@ -696,8 +696,9 @@ small {
 .carousel-container {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 300px; /* adjust as needed */
   height: auto;
+  margin-top: 20px;
   overflow: hidden;
 }
 
@@ -708,9 +709,11 @@ small {
   width: 100%;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  z-index: 0;
 }
 
 .carousel-container img.carousel-fade.active {
   opacity: 1;
+  z-index: 1;
   position: relative;
 }
