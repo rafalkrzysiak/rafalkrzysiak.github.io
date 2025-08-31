@@ -261,13 +261,9 @@
             </div>
 
             <!-- Carousel Slideshow -->
-            <div class="carousel carousel-slider center">
-              <div class="carousel-item white-text" href="#one!">
-                <img src="/assets/img/IEEE_HMS_Headshot_pic_500x500.jpg" />
-              </div>
-              <div class="carousel-item white-text" href="#two!">
-                <img src="/assets/img/JPL_rover_selfie_500x500.jpg" />
-              </div>
+            <div class="carousel-container">
+              <img class="carousel-fade active" src="/assets/img/IEEE_HMS_Headshot_pic_500x500.jpg" />
+              <img class="carousel-fade" src="/assets/img/JPL_rover_selfie_500x500.jpg" />
             </div>
 
             <!-- quick cred chips -->
@@ -755,14 +751,6 @@
   <!-- Materialize - Compiled and minified JavaScript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
   <script>
-    function autoplayCarousel() {
-    const carousel = $(".carousel.carousel-slider");
-    if (carousel.length > 0) {
-      carousel.carousel("next");
-      setTimeout(autoplayCarousel, 2000); // 2-second interval
-    }
-  }
-
     $(document).ready(function () {
       // Initialize scrollspy and sidenav
       $(".scrollspy").scrollSpy();
@@ -771,17 +759,25 @@
         edge: "left",
         closeOnClick: true
       });
-
-      // Initialize only full-width carousel
-      $(".carousel.carousel-slider").carousel({
-        fullWidth: true,
-        indicators: true
-      });
-
-      // Start autoplay once DOM is ready and carousel is initialized
-      setTimeout(autoplayCarousel, 2000);
     });
   </script>
+
+  <script>
+  function fadeCarousel() {
+    const $images = $('.carousel-container img.carousel-fade');
+    let index = 0;
+
+    setInterval(function () {
+      $images.removeClass('active');
+      index = (index + 1) % $images.length;
+      $images.eq(index).addClass('active');
+    }, 4000); // Change every 4 seconds
+  }
+
+  $(document).ready(function () {
+    fadeCarousel();
+  });
+</script>
 
   <script>
   document.addEventListener('DOMContentLoaded', function () {
