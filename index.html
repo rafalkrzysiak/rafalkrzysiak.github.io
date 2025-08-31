@@ -260,9 +260,14 @@
               <h5>Self-driven, quick starter, passionate mechanical engineer with a curious mind who enjoys solving complex and challenging real-world problems.</h5>
             </div>
 
-            <div class="carousel">
-              <a class="carousel-item" href="#slide1"><img src="/assets/img/IEEE_HMS_Headshot_pic_500x500.jpg"></a>
-              <a class="carousel-item" href="#slide2"><img src="/assets/img/JPL_rover_selfie_500x500.jpg"></a>
+            <!-- Carousel Slideshow -->
+            <div class="carousel carousel-slider center">
+              <div class="carousel-item white-text" href="#one!">
+                <img src="/assets/img/IEEE_HMS_Headshot_pic_500x500.jpg" />
+              </div>
+              <div class="carousel-item white-text" href="#two!">
+                <img src="/assets/img/JPL_rover_selfie_500x500.jpg" />
+              </div>
             </div>
 
             <!-- quick cred chips -->
@@ -752,24 +757,25 @@
   <script>
     // Materialize - Initializers
     $(document).ready(function () {
-    $(".scrollspy").scrollSpy();
+      // Initialize the scrollspy and side nav
+      $(".scrollspy").scrollSpy();
+      $(".button-collapse").sideNav({
+        menuWidth: 190,
+        edge: "left",
+        closeOnClick: true
+      });
 
-    $(".button-collapse").sideNav({
-      menuWidth: 190,
-      edge: "left",
-      closeOnClick: true
+      // Initialize the carousel
+      $(".carousel.carousel-slider").carousel({
+        fullWidth: true,
+        indicators: true
+      });
+
+      // Auto-slide every 5 seconds
+      setInterval(function () {
+        $('.carousel').carousel('next');
+      }, 5000); // Change 5000 to a different number for faster/slower slide
     });
-
-    $('.carousel').carousel({
-      fullWidth: true,
-      indicators: true
-    });
-
-    // Optional: auto-slide every 5s
-    setInterval(function () {
-      $('.carousel').carousel('next');
-    }, 5000);
-  });
   </script>
 
   <script>
