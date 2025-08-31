@@ -238,7 +238,7 @@
               <li><i class="fa fa-graduation-cap" aria-hidden="true"></i> Ph.D. Candidate @ UC Merced</li>
               <li><i class="fa fa-file-text-o" aria-hidden="true"></i> <span id="pubCount">—</span> publications</li>
             </ul>
-            
+
             <div class="social">
               <a href="https://www.linkedin.com/in/rafal-krzysiak-864742b1/" target="_blank">
                 <button class="icon-btn linkedin">
@@ -712,6 +712,15 @@
       })
     })
   </script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var n = document.querySelectorAll('#publications ol li').length;
+    var el = document.getElementById('pubCount');
+    if (el && n) el.textContent = n + '+';
+  });
+</script>
+
 </body>
 
 </html>
