@@ -260,19 +260,42 @@
               <h5>Self-driven, quick starter, passionate mechanical engineer with a curious mind who enjoys solving complex and challenging real-world problems.</h5>
             </div>
 
-            <!-- Carousel Slideshow -->
-            <div class="carousel-container">
-              <img class="carousel-fade active" src="/assets/img/IEEE_HMS_Headshot_pic_500x500.jpg" />
-              <img class="carousel-fade" src="/assets/img/JPL_rover_selfie_500x500.jpg" />
+            <div class="dual-carousel-wrapper" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: flex-start; margin-top: 30px;">
+              <!-- Left Carousel: Headshots -->
+              <div class="carousel-container" style="position: relative; width: 300px;">
+                <img class="carousel-fade active" src="/assets/img/IEEE_HMS_Headshot_pic_500x500.jpg" />
+                <img class="carousel-fade" src="/assets/img/JPL_rover_selfie_500x500.jpg" />
 
-              <!-- Arrows -->
-              <a class="carousel-prev">&#10094;</a>
-              <a class="carousel-next">&#10095;</a>
 
-              <!-- Dots -->
-              <div class="carousel-dots">
-                <span class="dot active" data-index="0"></span>
-                <span class="dot" data-index="1"></span>
+                <!-- Arrows -->
+                <a class="carousel-prev" style="display: none;" onclick="plusSlides(-1, 0)">&#10094;</a>
+                <a class="carousel-next" style="display: none;" onclick="plusSlides(1, 0)">&#10095;</a>
+
+
+                <!-- Dots -->
+                <div class="carousel-dots">
+                <span class="dot active" data-index="0" onclick="currentSlide(0, 0)"></span>
+                <span class="dot" data-index="1" onclick="currentSlide(1, 0)"></span>
+                </div>
+                </div>
+
+
+                <!-- Right Carousel: Research Figures -->
+                <div class="carousel-container" style="position: relative; width: 300px;">
+                <img class="carousel-fade active" src="/assets/img/research_figure1.png" />
+                <img class="carousel-fade" src="/assets/img/research_figure2.png" />
+
+
+                <!-- Arrows -->
+                <a class="carousel-prev" style="display: none;" onclick="plusSlides(-1, 1)">&#10094;</a>
+                <a class="carousel-next" style="display: none;" onclick="plusSlides(1, 1)">&#10095;</a>
+
+
+                <!-- Dots -->
+                <div class="carousel-dots">
+                <span class="dot active" data-index="0" onclick="currentSlide(0, 1)"></span>
+                <span class="dot" data-index="1" onclick="currentSlide(1, 1)"></span>
+                </div>
               </div>
             </div>
 
