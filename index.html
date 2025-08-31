@@ -755,33 +755,32 @@
   <!-- Materialize - Compiled and minified JavaScript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
   <script>
-    // Materialize - Initializers
     function autoplayCarousel() {
-    const carousel = $('.carousel');
+    const carousel = $(".carousel.carousel-slider");
     if (carousel.length > 0) {
-      carousel.carousel('next');
-      setTimeout(autoplayCarousel, 2000); // Delay between slides (ms)
+      carousel.carousel("next");
+      setTimeout(autoplayCarousel, 2000); // 2-second interval
     }
   }
 
-  $(document).ready(function () {
-    // Initialize scrollspy and sidenav
-    $(".scrollspy").scrollSpy();
-    $(".button-collapse").sideNav({
-      menuWidth: 190,
-      edge: "left",
-      closeOnClick: true
-    });
+    $(document).ready(function () {
+      // Initialize scrollspy and sidenav
+      $(".scrollspy").scrollSpy();
+      $(".button-collapse").sideNav({
+        menuWidth: 190,
+        edge: "left",
+        closeOnClick: true
+      });
 
-    // Initialize the carousel slider
-    $(".carousel.carousel-slider").carousel({
-      fullWidth: true,
-      indicators: true
-    });
+      // Initialize only full-width carousel
+      $(".carousel.carousel-slider").carousel({
+        fullWidth: true,
+        indicators: true
+      });
 
-    // Start the autoplay
-    autoplayCarousel();
-  });
+      // Start autoplay once DOM is ready and carousel is initialized
+      setTimeout(autoplayCarousel, 2000);
+    });
   </script>
 
   <script>
