@@ -789,6 +789,67 @@
   });
 </script>
 
+<script>
+  const images = document.querySelectorAll('.carousel-fade');
+  const dots = document.querySelectorAll('.dot');
+  const prevBtn = document.querySelector('.carousel-prev');
+  const nextBtn = document.querySelector('.carousel-next');
+  let currentIndex = 0;
+  let timer;
+
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+      dots[i].classList.toggle('active', i === index);
+    });
+    currentIndex = index;
+  }
+
+  function nextImage() {
+    let next = (currentIndex + 1) % images.length;
+    showImage(next);
+  }
+
+  function prevImage() {
+    let prev = (currentIndex - 1 + images.length) % images.length;
+    showImage(prev);
+  }
+
+  // Auto-play
+  function startCarousel() {
+    timer = setInterval(nextImage, 5000);
+  }
+
+  function stopCarousel() {
+    clearInterval(timer);
+  }
+
+  // Dots click
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      stopCarousel();
+      showImage(parseInt(dot.getAttribute('data-index')));
+      startCarousel();
+    });
+  });
+
+  // Arrows
+  nextBtn.addEventListener('click', () => {
+    stopCarousel();
+    nextImage();
+    startCarousel();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    stopCarousel();
+    prevImage();
+    startCarousel();
+  });
+
+  showImage(currentIndex);
+  startCarousel();
+</script>
+
   <script>
   document.addEventListener('DOMContentLoaded', function () {
     var n = document.querySelectorAll('#publications ol li').length;
