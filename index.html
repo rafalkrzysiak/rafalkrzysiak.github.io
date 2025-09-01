@@ -470,6 +470,37 @@
             </div>
           </div>
         </div>
+
+        <!-- Thermal imager project and platform -->
+        <div class="col s12 m6 l4">
+          <div class="card medium">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img alt="Lab Benchtop Thermal Imager" src="/assets/img/2D_Heat_PINN.png" style="height: 100%; width: 100%" class="activator" />
+            </div>
+            <div class="card-content">
+              <span class="card-title activator teal-text hoverline">Lab Benchtop Thermal Imager<i class="mdi-navigation-more-vert right"></i></span>
+              <p>
+                A physics-informed neural network that simulates steady-state heat transfer across a PCB board with localized power sources.
+              </p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text"><small>Details</small><i class="mdi-navigation-close right"></i></span>
+              <ul>
+                <li><b>Tools:</b> TensorFlow, NumPy, Matplotlib, Python</li>
+                <li>Implements a 2D physics-informed neural network constrained by the heat equation ∇²T + Q = 0.</li>
+                <li>Models real-world boundary conditions for power-dissipating electronic components and fixed ambient edges.</li>
+                <li>Trained with automatic differentiation to satisfy the PDE residuals and boundary conditions.</li>
+                <li>Produces visual heatmaps and temperature profiles across the PCB domain.</li>
+              </ul>
+              <div class="card-action">
+                <!-- Optional GitHub link -->
+                <a aria-label="Visit the GitHub repo for project" href="https://github.com/YOUR_USERNAME/pinn-pcb-heat" target="_blank" data-position="top" data-tooltip="View Source" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped">
+                  <i class="fa fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
