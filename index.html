@@ -507,6 +507,39 @@
             </div>
           </div>
         </div>
+
+        <div class="col s12 m6 l4">
+          <div class="card medium">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img alt="Methane plume detection from satellite" src="/assets/img/Methane_plume.png" style="height: 100%; width: 100%" class="activator" />
+            </div>
+            <div class="card-content">
+              <span class="card-title activator teal-text hoverline">Methane Detection from Sentinel-2<i class="mdi-navigation-more-vert right"></i></span>
+              <div style="margin-bottom: 8px;">
+                <span class="chip green white-text">Completed</span>
+              </div>
+              <p>
+                Detecting and quantifying methane super-emitter plumes from Sentinel-2 satellite imagery using deep learning.
+              </p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text"><small>Details</small><i class="mdi-navigation-close right"></i></span>
+              <ul>
+                <li><b>Tools:</b> Python, PyTorch, Rasterio, NumPy, Matplotlib</li>
+                <li>Utilizes Sentinel-2 L2A satellite data, specifically SWIR bands (B11 & B12) sensitive to methane absorption.</li>
+                <li>Applies a deep learning model to segment and quantify high-concentration methane plumes from point sources.</li>
+                <li>Addition of embedding synthetic methane plumes using gaussian plume model with Ornstein–Uhlenbeck process.</li>
+                <li>Implements Grad-CAM for model interpretability, visualizing the spatial features driving the detection.</li>
+              </ul>
+              <div class="card-action">
+                <a aria-label="Visit the GitHub repo for project" href="https://github.com/YOUR_USERNAME/sentinel2-methane-detection" target="_blank" data-position="top" data-tooltip="View Source" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped">
+                  <i class="fa fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
